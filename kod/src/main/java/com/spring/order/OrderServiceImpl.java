@@ -7,8 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.spring.order.DAO.OrderDAO;
 
-@Service
+@Service("orderService")
 public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private OrderDAO orderDAO;
 	
 	@Autowired
 	public OrderDAO orderDAO;
