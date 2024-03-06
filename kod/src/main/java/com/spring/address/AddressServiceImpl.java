@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("addressService")
 public class AddressServiceImpl implements AddressService {
+	@Autowired
+	private AddressDAO addressDAO;
+	
 	@Override
 	public List<AddressDTO> selectAll(AddressDTO addressDTO) {
 		// TODO Auto-generated method stub
