@@ -1,4 +1,4 @@
-package com.spring.coupon.DAO;
+package com.spring.member.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,10 +9,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.spring.coupon.CouponDTO;
+import com.spring.member.MemberDTO;
 
-@Repository("couponDAO")
-public class CouponDAO {
+@Repository("memberDAO")
+public class MemberDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -22,16 +22,16 @@ public class CouponDAO {
 	private static final String UPDATE = "";
 	private static final String DELETE = "";
 	
-	public List<CouponDTO> selectAll(CouponDTO couponDTO) {
-		return (List<CouponDTO>) jdbcTemplate.query(SELECTALL, new CouponRowMapper());
+	public List<MemberDTO> selectAll(MemberDTO memberDTO) {
+		return (List<MemberDTO>) jdbcTemplate.query(SELECTALL, new MemberRowMapper());
 	}
 	
-	public CouponDTO selectOne(CouponDTO couponDTO) {
+	public MemberDTO selectOne(MemberDTO memberDTO) {
 		Object[] args = {};
-		return jdbcTemplate.queryForObject(SELECTONE, args, new CouponRowMapper());
+		return jdbcTemplate.queryForObject(SELECTONE, args, new MemberRowMapper());
 	}
 	
-	public boolean insert(CouponDTO couponDTO) {
+	public boolean insert(MemberDTO memberDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -39,7 +39,7 @@ public class CouponDAO {
 		return true;
 	}
 	
-	public boolean update(CouponDTO couponDTO) {
+	public boolean update(MemberDTO memberDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -47,7 +47,7 @@ public class CouponDAO {
 		return true;
 	}
 
-	public boolean delete(CouponDTO couponDTO) {
+	public boolean delete(MemberDTO memberDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -56,10 +56,10 @@ public class CouponDAO {
 	}
 }
 
-class CouponRowMapper implements RowMapper<CouponDTO>{
+class MemberRowMapper implements RowMapper<MemberDTO>{
 	@Override
-	public CouponDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-		CouponDTO data = new CouponDTO();
+	public MemberDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
+		MemberDTO data = new MemberDTO();
 		return data;
 	}
 }

@@ -1,4 +1,4 @@
-package com.spring.coupon.DAO;
+package com.spring.wishList.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,10 +9,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.spring.coupon.CouponDTO;
+import com.spring.wishList.WishListDTO;
 
-@Repository("couponDAO")
-public class CouponDAO {
+@Repository("wishListDAO")
+public class WishListDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -22,16 +22,16 @@ public class CouponDAO {
 	private static final String UPDATE = "";
 	private static final String DELETE = "";
 	
-	public List<CouponDTO> selectAll(CouponDTO couponDTO) {
-		return (List<CouponDTO>) jdbcTemplate.query(SELECTALL, new CouponRowMapper());
+	public List<WishListDTO> selectAll(WishListDTO wishListDTO) {
+		return (List<WishListDTO>) jdbcTemplate.query(SELECTALL, new WishListRowMapper());
 	}
 	
-	public CouponDTO selectOne(CouponDTO couponDTO) {
+	public WishListDTO selectOne(WishListDTO wishListDTO) {
 		Object[] args = {};
-		return jdbcTemplate.queryForObject(SELECTONE, args, new CouponRowMapper());
+		return jdbcTemplate.queryForObject(SELECTONE, args, new WishListRowMapper());
 	}
 	
-	public boolean insert(CouponDTO couponDTO) {
+	public boolean insert(WishListDTO wishListDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -39,7 +39,7 @@ public class CouponDAO {
 		return true;
 	}
 	
-	public boolean update(CouponDTO couponDTO) {
+	public boolean update(WishListDTO wishListDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -47,7 +47,7 @@ public class CouponDAO {
 		return true;
 	}
 
-	public boolean delete(CouponDTO couponDTO) {
+	public boolean delete(WishListDTO wishListDTO) {
 		int result = jdbcTemplate.update(INSERT);
 		if(result <=0 ) {
 			return false;
@@ -56,10 +56,10 @@ public class CouponDAO {
 	}
 }
 
-class CouponRowMapper implements RowMapper<CouponDTO>{
+class WishListRowMapper implements RowMapper<WishListDTO>{
 	@Override
-	public CouponDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-		CouponDTO data = new CouponDTO();
+	public WishListDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
+		WishListDTO data = new WishListDTO();
 		return data;
 	}
 }
