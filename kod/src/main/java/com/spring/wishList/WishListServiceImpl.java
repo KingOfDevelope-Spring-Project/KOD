@@ -1,0 +1,38 @@
+package com.spring.wishList;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class WishListServiceImpl implements WishListService {
+	@Override
+	public List<WishListDTO> selectAll(WishListDTO wishListDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WishListDTO selectOne(WishListDTO wishListDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insert(WishListDTO wishListDTO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(WishListDTO wishListDTO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(WishListDTO wishListDTO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

@@ -23,12 +23,12 @@ public class CartDAO {
 	private static final String DELETE = "";
 	
 	public List<CartDTO> selectAll(CartDTO cartDTO) {
-		return (List<CartDTO>) jdbcTemplate.query(SELECTALL, new AddressRowMapper());
+		return (List<CartDTO>) jdbcTemplate.query(SELECTALL, new CartRowMapper());
 	}
 	
 	public CartDTO selectOne(CartDTO cartDTO) {
 		Object[] args = {};
-		return jdbcTemplate.queryForObject(SELECTONE, args, new AddressRowMapper());
+		return jdbcTemplate.queryForObject(SELECTONE, args, new CartRowMapper());
 	}
 	
 	public boolean insert(CartDTO cartDTO) {
@@ -56,7 +56,7 @@ public class CartDAO {
 	}
 }
 
-class AddressRowMapper implements RowMapper<CartDTO>{
+class CartRowMapper implements RowMapper<CartDTO>{
 	@Override
 	public CartDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
 		CartDTO data = new CartDTO();
