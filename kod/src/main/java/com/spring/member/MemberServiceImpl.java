@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("memberService")
 public class MemberServiceImpl implements MemberService {
+
+	@Autowired
+	private MemberDAO memberDAO;
+	
 	@Override
 	public List<MemberDTO> selectAll(MemberDTO memberDTO) {
 		// TODO Auto-generated method stub
