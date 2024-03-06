@@ -13,9 +13,6 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private OrderDAO orderDAO;
 	
-	@Autowired
-	public OrderDAO orderDAO;
-	
 	@Override
 	public List<OrderDTO> selectAll(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
