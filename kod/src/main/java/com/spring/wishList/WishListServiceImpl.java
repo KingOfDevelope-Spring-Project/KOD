@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.wishList.DAO.WishListDAO;
 
-@Service
+@Service("wishListService")
 public class WishListServiceImpl implements WishListService {
 	
 	@Autowired
