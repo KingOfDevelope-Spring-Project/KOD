@@ -1,44 +1,44 @@
-package com.spring.wishList;
+package com.spring.order;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.wishList.DAO.WishListDAO;
+import com.spring.order.DAO.OrderDAO;
 
 @Service
-public class WishListServiceImpl implements WishListService {
+public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
-	private WishListDAO wishListDAO;
+	public OrderDAO orderDAO;
 	
 	@Override
-	public List<WishListDTO> selectAll(WishListDTO wishListDTO) {
+	public List<OrderDTO> selectAll(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public WishListDTO selectOne(WishListDTO wishListDTO) {
+	public OrderDTO selectOne(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean insert(WishListDTO wishListDTO) {
+	public boolean insert(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean update(WishListDTO wishListDTO) {
+	public boolean update(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(WishListDTO wishListDTO) {
+	public boolean delete(OrderDTO orderDTO) {
 		// TODO Auto-generated method stub
 		return false;
 	}
