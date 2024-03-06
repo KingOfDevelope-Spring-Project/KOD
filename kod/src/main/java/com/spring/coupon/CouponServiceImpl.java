@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("couponService")
 public class CouponServiceImpl implements CouponService {
+
+	@Autowired
+	private CouponDAO couponDAO;
+	
 	@Override
 	public List<CouponDTO> selectAll(CouponDTO couponDTO) {
 		// TODO Auto-generated method stub
