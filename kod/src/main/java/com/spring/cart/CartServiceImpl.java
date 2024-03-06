@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("cartService")
 public class CartServiceImpl implements CartService {
+
+	@Autowired
+	private CartDAO cartDAO;
+	
 	@Override
 	public List<CartDTO> selectAll(CartDTO cartDTO) {
 		// TODO Auto-generated method stub
