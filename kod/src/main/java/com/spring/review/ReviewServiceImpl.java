@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("reviewService")
 public class ReviewServiceImpl implements ReviewService {
+
+	@Autowired
+	private ReviewDAO reviewDAO;
+	
 	@Override
 	public List<ReviewDTO> selectAll(ReviewDTO reviewDTO) {
 		// TODO Auto-generated method stub
