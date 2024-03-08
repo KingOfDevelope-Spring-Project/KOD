@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.spring.address.AddressDTO;
 
 @Repository("addressDAO")
-public class AddressDAO {
+public class AddressDAO_ver2 {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
